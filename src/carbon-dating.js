@@ -7,4 +7,7 @@ module.exports = function dateSample(sampleActivity) {
   if (!sampleActivity || typeof +sampleActivity === 'number' || typeof sampleActivity !== 'string') {
     return false
   }
+
+  let res = (Math.log(MODERN_ACTIVITY/sampleActivity)) / (0.693 / HALF_LIFE_PERIOD);
+  return Math.ceil(res);
 };
